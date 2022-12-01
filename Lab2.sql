@@ -17,7 +17,8 @@ FROM film;
 
 -- 4. What's the average movie duration expressed in format (hours, minutes)?
 
-SELECT AVG(length) AS 'average duration', TIME_FORMAT(AVG(length), '%H:%i')
+
+SELECT SEC_TO_TIME(ROUND(AVG(length*60),0)) AS 'avg duration' -- TIME_FORMAT(AVG(length), '%T')
 FROM film;
 
 -- 5. How many distinct (different) actors' last names are there?
@@ -52,7 +53,7 @@ FROM film;
 -- 10. Get all films with ARMAGEDDON in the title.
 Select *
 FROM film
-WHERE title LIKE 'ARMAGEDDON %';
+WHERE title LIKE '%ARMAGEDDON%';
 
 -- 11. Get all films which title ends with APOLLO.
 SELECT *
