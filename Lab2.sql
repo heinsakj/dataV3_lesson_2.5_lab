@@ -68,4 +68,4 @@ LIMIT 10;
 
 SELECT COUNT(title) AS 'NO_behind_the_scenes'
 FROM film
-WHERE special_features = 'Behind the Scenes';
+WHERE special_features LIKE '%Behind the Scenes%';
